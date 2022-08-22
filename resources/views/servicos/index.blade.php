@@ -3,9 +3,9 @@
 @section('title', 'E-Diaristas')
 
 @section('content_header')
-    <h1>Home</h1>
+    <h1>Lista de Serviços</h1>
 @stop
 
 @section('content')
-    <p>Vem-vindo ao E-Diaristas!</p>
+    <p>Mostrar a lista aqui!</p>
 @stop
