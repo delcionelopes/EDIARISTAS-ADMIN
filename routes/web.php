@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ServicoController;
+use App\Models\Servico;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,4 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Rotas para os serviços
 Route::get('/servicos',[ServicoController::class,'index'])->name('servicos.index');
-
+Route::get('/servicos/create',[ServicoController::class,'create'])->name('servicos.create');
+Route::post('/servicos',[ServicoController::class,'store'])->name('servicos.store');

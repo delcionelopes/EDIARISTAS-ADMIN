@@ -85,7 +85,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'logo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -277,8 +277,8 @@ return [
                     'icon'    => 'fas fa-fw fa-list',
                 ],
                 [
-                    'text'    => 'Cadastrar Serviços',
-                    'url'     => '#', 
+                    'text'    => 'Novo Serviço',
+                    'route'     => 'servicos.create', 
                     'icon'    => 'fas fa-fw fa-file',                  
                 ],
                
