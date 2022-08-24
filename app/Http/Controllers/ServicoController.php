@@ -36,5 +36,34 @@ class ServicoController extends Controller
         return redirect()->route('servicos.index');
     }
 
+    public function edit(int $id)
+    {
+        $servico = $this->servico->find($id);
+        
+        return view('servicos.edit',[
+            'servico' => $servico,
+        ]);
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $data = $request->except(['_token','_method']);
+
+        $servico = $this->servico->find($id);
+
+        $servico->update($data);
+
+        return redirect()->route('servicos.index');
+    }
+
+    public function destroy(int $id)
+    {
+        $servico = $this->servico->find($id);
+
+        $servico->delete();
+
+        return redirect()->route('servicos.index');
+
+    }
 
 }

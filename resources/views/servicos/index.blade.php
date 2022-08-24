@@ -20,7 +20,16 @@
       <tr id="servico{{$servico->id}}">
       <th scope="row">{{$servico->nome}}</th>
       <div class="group-btn">
-            <td></td>
+            <td>
+              <div class="row">
+              <a type="button" href="{{ route('servicos.edit',$servico) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a> 
+              <form action="{{ route('servicos.destroy',$servico) }}" method="post">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              </form>
+            </div>
+            </td>
       </div>      
     </tr>   
     @empty
