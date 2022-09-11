@@ -15,18 +15,21 @@ Este é um projeto feito em Laravel que faz parte do sistema administrativo da p
 ### Clonar o projeto
 
 ...
+
 git clone https://github.com/delcionelopes/EDIARISTAS-ADMIN.git
 ...
 
 #### Instalar as dependências
 
 ...
+
 composer install
 ...
 
 Ou em ambiente de desenvolvimento
 
 ...
+
 composer update
 ...
 
@@ -37,11 +40,14 @@ Copiar o arquivo de exemplo `.env.example` para `.env` na raiz do projeto. Confi
 #### Criar a estrutura do banco de dados
 
 ...
+
 php artisan migrate
 ...
 
 #### Iniciar o servidor de desenvolvimento
+
 ...
+
 php artisan serve
 ...
 
