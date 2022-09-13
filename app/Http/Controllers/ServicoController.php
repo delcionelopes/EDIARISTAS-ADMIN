@@ -13,6 +13,12 @@ class ServicoController extends Controller
     {
         $this->servico = $servico;
     }
+
+    /**
+     * lista os serviços
+     *
+     * @return void
+     */
     public function index()
     {
         $servicos = $this->servico->paginate(10);
@@ -22,20 +28,37 @@ class ServicoController extends Controller
         ]);
     }
 
+    /**
+     * cria um novo serviço
+     *
+     * @return void
+     */
     public function create()
     {
         return view('servicos.create');
     }
-
+    /**
+     * grava o novo serviço no BD
+     *
+     * @param ServicoRequest $request
+     * @return void
+     */
     public function store(ServicoRequest $request)
     {
         $dados = $request->except('_token');
         
         $this->servico->create($dados);
 
-        return redirect()->route('servicos.index');
+        return redirect()->route('servicos.index')
+                         ->with('mensagem','Serviço criado com sucesso!');
     }
 
+    /**
+     * edita o seeviço
+     *
+     * @param integer $id
+     * @return void
+     */
     public function edit(int $id)
     {
         $servico = $this->servico->find($id);
@@ -45,6 +68,13 @@ class ServicoController extends Controller
         ]);
     }
 
+    /**
+     * grava a alteração do serviço
+     *
+     * @param ServicoRequest $request
+     * @param integer $id
+     * @return void
+     */
     public function update(ServicoRequest $request, int $id)
     {
         $data = $request->except(['_token','_method']);
@@ -53,9 +83,16 @@ class ServicoController extends Controller
 
         $servico->update($data);
 
-        return redirect()->route('servicos.index');
+        return redirect()->route('servicos.index')
+                         ->with('mensagem','Serviço atualizado com sucesso!');;
     }
 
+    /**
+     * exclui o serviço
+     *
+     * @param integer $id
+     * @return void
+     */
     public function destroy(int $id)
     {
         $servico = $this->servico->find($id);
