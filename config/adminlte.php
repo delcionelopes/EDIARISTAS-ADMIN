@@ -321,6 +321,16 @@ return [
     */
 
     'plugins' => [
+        'pluginjqueryMask2' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js',
+                ],
+            ],      
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [
@@ -372,7 +382,7 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.32/sweetalert2.min.js',
                 ],
             ],
         ],
