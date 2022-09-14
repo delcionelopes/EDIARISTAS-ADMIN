@@ -23,13 +23,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="password">Senha</label>
-                                <input value="{{ old('password', $usuario->password ?? '') }}" type="password" required class="form-control" name="password" id="password" placeholder="password">
+                                <input value="{{ old('password', '') }}" type="password" required class="form-control" name="password" id="password" placeholder="senha do usuário">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="pass">Confirmar senha</label>
-                                <input value="{{ old('password', $usuario->password ?? '') }}" type="password" required class="form-control" name="password" id="password" placeholder="password">
+                                <label for="password_confirmation">Confirmação</label>
+                                <input value="{{ old('password_confirmation', '') }}" type="password" required class="form-control" name="password_confirmation" id="password_confirmation" placeholder="confirmação da senha do usuário">
                             </div>
                         </div>
                     </div>

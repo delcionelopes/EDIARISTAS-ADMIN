@@ -56,13 +56,11 @@ class ServicoController extends Controller
     /**
      * edita o seeviço
      *
-     * @param integer $id
+     * @param Servico $servico
      * @return void
      */
-    public function edit(int $id)
-    {
-        $servico = $this->servico->find($id);
-        
+    public function edit(Servico $servico)
+    {     
         return view('servicos.edit',[
             'servico' => $servico,
         ]);
@@ -71,15 +69,13 @@ class ServicoController extends Controller
     /**
      * grava a alteração do serviço
      *
-     * @param ServicoRequest $request
+     * @param ServicoRequest $request Servico $servico
      * @param integer $id
      * @return void
      */
-    public function update(ServicoRequest $request, int $id)
+    public function update(ServicoRequest $request, Servico $servico)
     {
-        $data = $request->except(['_token','_method']);
-
-        $servico = $this->servico->find($id);
+        $data = $request->except(['_token','_method']);       
 
         $servico->update($data);
 
@@ -90,12 +86,11 @@ class ServicoController extends Controller
     /**
      * exclui o serviço
      *
-     * @param integer $id
+     * @param Servico $servico
      * @return void
      */
-    public function destroy(int $id)
-    {
-        $servico = $this->servico->find($id);
+    public function destroy(Servico $servico)
+    {   
 
         $servico->delete();
 

@@ -8,11 +8,7 @@
 
 @section('content')
 
-@if(session('mensagem'))
-    <div class="alert alert-success">
-      {{session('mensagem')}}
-    </div>    
-@endif
+@include('_mensagens_sessao')
 
 <table class="table table-hover">
   <thead>
@@ -33,7 +29,7 @@
               <form action="{{ route('usuarios.destroy',$usuario) }}" method="post">
                 @method('DELETE')
                 @csrf
-                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza de que deseja apagar?')"><i class="fas fa-trash"></i></button>
               </form>
             </div>
             </td>
